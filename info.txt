@@ -1,0 +1,982 @@
+# ALBLOSHI WEBSITE — COMPLETE PREMIUM WEBSITE BLUEPRINT
+
+## Brand Name
+
+# ALBLOSHI
+
+### Tagline:
+
+**Supplying Strength Every Industry**
+
+---
+
+# WEBSITE VISION
+
+Create a premium, modern, industrial-style corporate website for **Mohammad Abdulla Albloshi Trading Co.**, a Saudi-based industrial and trading company operating across:
+
+1. Industrial Materials & Building Materials
+2. Manpower Supply
+3. Food Distribution & Restaurant Supplies
+4. Intelligent Chemicals (TELLABS Partnership)
+
+The website should feel:
+
+* Corporate
+* International
+* Premium
+* Industrial
+* Modern Saudi business style
+* Highly visual
+* Trustworthy
+* Enterprise-level
+
+The UI should use:
+
+* Bold typography
+* Large readable headings
+* Heavy font weights
+* Premium whitespace
+* Blue-gradient brand accents inspired by logo
+* Dark + light contrast sections
+* Large industrial imagery
+* Elegant transitions and animations
+* Professional section spacing
+
+---
+
+# BRAND COLORS
+
+## Primary Colors
+
+* Royal Blue: #1B5FAF
+* Deep Blue: #173B7A
+* Gradient Blue: #0E6CC4 → #214E9A
+* Black: #0F172A
+* Light Gray: #F5F7FA
+* White: #FFFFFF
+
+## Accent Colors
+
+* Metallic Gray: #DCE3EA
+* Soft Silver: #EEF2F6
+
+---
+
+# FONT RECOMMENDATIONS
+
+## Headings
+
+* Poppins ExtraBold
+* Montserrat Black
+* Outfit ExtraBold
+
+## Paragraphs
+
+* Inter
+* Manrope
+* Open Sans
+
+---
+
+# WEBSITE STRUCTURE (10+ PAGES)
+
+# MAIN PAGES
+
+1. Home
+2. About Us
+3. Industrial Materials
+4. Food Distribution
+5. Intelligent Chemicals
+6. Manpower Supply
+7. TELLABS Partnership
+8. Industries We Serve
+9. Contact Us
+10. Careers
+11. Distribution Network
+12. Certifications & Compliance
+13. Gallery / Projects
+14. News & Updates
+15. Partner With Us
+
+---
+
+# NAVBAR STRUCTURE
+
+## Top Bar
+
+Include:
+
+* Phone Number
+* WhatsApp
+* Email
+* Location
+* Quick Inquiry Button
+
+### Example:
+
++966 54 958 1547 | [sales@albloshi.co](mailto:sales@albloshi.co) | Dammam, Saudi Arabia
+
+---
+
+# MAIN NAVBAR
+
+## Logo Left
+
+ALBLOSHI Logo
+
+## Menu Items
+
+### Home
+
+### About Us
+
+Dropdown:
+
+* Company Overview
+* Vision & Mission
+* Leadership
+* Why Choose Us
+* Certifications
+
+### Business Segments
+
+Dropdown:
+
+* Industrial Materials
+* Building Materials
+* Food Distribution
+* Intelligent Chemicals
+* Manpower Supply
+
+### Products
+
+Dropdown:
+
+* Pipes & Fittings
+* Valves & Flanges
+* Electrical Materials
+* Welding Materials
+* Restaurant Supplies
+* Rice Distribution
+* Palm Oil Supply
+* Water Treatment Chemicals
+* Activated Carbon
+* Industrial Cleaning Chemicals
+
+### Partners
+
+Dropdown:
+
+* TELLABS Chemicals
+* Strategic Suppliers
+* International Brands
+
+### Industries We Serve
+
+Dropdown:
+
+* Oil & Gas
+* Construction
+* Water Treatment
+* Food & Beverage
+* Hospitality
+* Manufacturing
+* Pulp & Paper
+* Sugar Industry
+
+### Distribution Network
+
+### Gallery
+
+### Careers
+
+### Contact Us
+
+### CTA BUTTON
+
+“Request a Quote”
+
+---
+
+# HOME PAGE STRUCTURE
+
+# HERO SECTION (FULLSCREEN)
+
+## STYLE
+
+Large fullscreen hero banner with automatic image slider.
+
+### Slider Timing
+
+Every 5–6 seconds.
+
+### Hero Slides
+
+## SLIDE 1 — INDUSTRIAL MATERIALS
+
+Visual:
+
+* Industrial refinery
+* Pipes
+* Construction equipment
+* Steel materials
+
+Heading:
+
+# Industrial Materials & Building Solutions
+
+Subheading:
+Premium industrial supply solutions across Saudi Arabia.
+
+CTA Buttons:
+
+* Explore Materials
+* Request Quote
+
+---
+
+## SLIDE 2 — FOOD DISTRIBUTION
+
+Visual:
+
+* Premium rice
+* Palm oil
+* Restaurant supply warehouse
+* Logistics trucks
+
+Heading:
+
+# Premium Food Distribution Across Saudi Arabia
+
+Subheading:
+Supplying premium rice, palm oil, and restaurant essentials.
+
+CTA:
+
+* Explore Food Division
+
+---
+
+## SLIDE 3 — TELLABS CHEMICALS
+
+Visual:
+
+* Water treatment plant
+* Chemical laboratory
+* Industrial cooling systems
+* Activated carbon imagery
+
+Heading:
+
+# Intelligent Chemical Solutions
+
+Subheading:
+Official regional distribution partner for TELLABS Specialty Chemicals.
+
+CTA:
+
+* Explore Chemicals
+
+---
+
+# HERO FEATURES BAR
+
+Below slider:
+
+* Trusted Across KSA
+* ISO-Based Supply Standards
+* Fast Distribution Network
+* Industrial Expertise
+* Reliable Logistics
+
+---
+
+# ABOUT SECTION
+
+## Layout
+
+Left text + right large industrial image.
+
+### Heading
+
+# About Albloshi
+
+### Content
+
+Mohammad Abdulla Albloshi Trading Co. is a Saudi-based industrial and trading company headquartered in Dammam, serving multiple industries across the Kingdom.
+
+The company operates across industrial materials, building materials, manpower supply, food distribution, and specialty chemicals.
+
+Albloshi is built on reliability, operational efficiency, trusted sourcing, and long-term partnerships.
+
+The company provides premium supply chain solutions across:
+
+* Industrial Projects
+* Oil & Gas
+* Construction
+* Hospitality
+* Food Distribution
+* Water Treatment
+* Manufacturing
+
+The company operates with a strong regional distribution network and strategic international partnerships.
+
+---
+
+# COMPANY STATS SECTION
+
+Dark premium section.
+
+## Statistics
+
+* 100+ Containers Imported
+* 5+ Major Saudi Cities Covered
+* 1000+ Industrial Products
+* 24/7 Supply Support
+* GCC Distribution Support
+* Multi-Industry Operations
+
+Animated counters.
+
+---
+
+# BUSINESS SEGMENTS SECTION
+
+Large premium cards with hover animations.
+
+## Segment 1
+
+### Industrial Materials
+
+Include:
+
+* Pipes
+* Flanges
+* Valves
+* Electrical Materials
+* Welding Materials
+* Safety Equipment
+* Sanitary Solutions
+
+CTA: Explore Industrial Division
+
+---
+
+## Segment 2
+
+### Food Distribution
+
+Include:
+
+* Premium Rice
+* Palm Oil
+* Restaurant Supplies
+* Hospitality Distribution
+* Bulk Supply
+
+CTA: Explore Food Division
+
+---
+
+## Segment 3
+
+### Intelligent Chemicals
+
+Include:
+
+* Water Treatment Chemicals
+* Activated Carbon
+* Fuel Additives
+* Defoamers
+* Cleaning & Disinfection
+* Polymer Solutions
+
+CTA: Explore Chemical Division
+
+---
+
+## Segment 4
+
+### Manpower Supply
+
+Include:
+
+* Skilled Labor
+* Welders
+* Electricians
+* Pipe Fitters
+* Construction Workers
+* Shutdown Teams
+
+CTA: Explore Manpower Services
+
+---
+
+# INDUSTRIES WE SERVE
+
+Grid layout with premium industrial icons.
+
+## Industries
+
+* Oil & Gas
+* Construction
+* Manufacturing
+* Hospitality
+* Water Treatment
+* Power Plants
+* Food Processing
+* Sugar Industry
+* Pulp & Paper
+* Infrastructure
+
+---
+
+# TELLABS PARTNERSHIP SECTION
+
+Premium split-layout section.
+
+## Left Side
+
+Large TELLABS logo.
+
+## Right Side
+
+### Heading
+
+# Official TELLABS Distribution Partner
+
+### Content
+
+Albloshi is the regional supply and distribution partner for TELLABS Intelligent Chemicals in Saudi Arabia and GCC markets.
+
+TELLABS Chemicals Pvt. Ltd. is part of the TEL Group, established in 1942 in Mumbai, India.
+
+The partnership focuses on:
+
+* Industrial Water Treatment
+* Activated Carbon
+* Polymers & Flocculants
+* Fuel Additives
+* Cleaning & Hygiene
+* Defoamers
+* Paper & Sugar Industry Chemicals
+
+### CTA
+
+Explore TELLABS Solutions
+
+---
+
+# PRODUCT SHOWCASE SECTION
+
+Create premium horizontal product slider.
+
+## Industrial Materials
+
+* CS Pipes
+* SS Pipes
+* Flanges
+* Valves
+* Fittings
+* Fasteners
+* Cable Trays
+* Welding Materials
+
+## Food Products
+
+* Premium Rice
+* Palm Oil
+* Restaurant Essentials
+* Packaging Materials
+
+## Chemicals
+
+* Water Treatment
+* Activated Carbon
+* Antifoam Solutions
+* Cleaning Chemicals
+
+---
+
+# WHY CHOOSE US SECTION
+
+Premium cards.
+
+## Reasons
+
+### Reliable Supply Chain
+
+Strong sourcing and logistics across Saudi Arabia.
+
+### Trusted Partnerships
+
+Strategic international supplier partnerships.
+
+### Technical Expertise
+
+Deep industrial and commercial product knowledge.
+
+### Fast Delivery
+
+Efficient regional warehousing and transportation.
+
+### Multi-Industry Operations
+
+Solutions across industrial, chemical, manpower, and food sectors.
+
+### Customer-Centric Support
+
+Dedicated account and operational support.
+
+---
+
+# DISTRIBUTION NETWORK SECTION
+
+Saudi Arabia map with animated location markers.
+
+## Cities Covered
+
+* Dammam
+* Al Khobar
+* Jubail
+* Qatif
+* Al Hassa
+
+Future Expansion:
+
+* Riyadh
+* Jeddah
+* Makkah
+* Madinah
+
+---
+
+# CUSTOMER TESTIMONIALS SECTION
+
+Premium testimonial slider.
+
+## Example Reviews
+
+### Review 1
+
+“Reliable industrial supply partner with excellent delivery support.”
+
+### Review 2
+
+“Professional team with strong technical product understanding.”
+
+### Review 3
+
+“Trusted distribution support for our hospitality operations.”
+
+### Review 4
+
+“Efficient supply chain and excellent communication.”
+
+---
+
+# CLIENTS / BRANDS SECTION
+
+Scrolling logo carousel.
+
+Include:
+
+* TELLABS
+* Industrial brands
+* Construction brands
+* Hospitality supply partners
+* Global sourcing partners
+
+---
+
+# FAQ SECTION
+
+## Questions
+
+### What industries does Albloshi serve?
+
+### Do you provide manpower supply services?
+
+### Are you an official TELLABS distributor?
+
+### Which Saudi regions do you cover?
+
+### Do you support industrial project supply?
+
+### Do you provide bulk restaurant supply?
+
+---
+
+# CONTACT SECTION
+
+## Left Side
+
+Large contact form.
+
+Fields:
+
+* Name
+* Company
+* Email
+* Phone
+* Service Required
+* Message
+
+---
+
+## Right Side
+
+### Contact Details
+
+#### Company
+
+Mohammad Abdulla Albloshi Trading Co.
+
+#### Contact Person
+
+Mohammad Riaz — Business Development Manager
+
+#### Email
+
+[sales@albloshi.co](mailto:sales@albloshi.co)
+
+#### Mobile / WhatsApp
+
++966 54 958 1547
+
+#### Website
+
+[https://albloshi.co](https://albloshi.co)
+
+#### Address
+
+5250, Al Nidal 7372,
+Ash Shulah Dist.,
+Dammam 34261,
+Saudi Arabia
+
+#### CR Number
+
+7049763092
+
+#### EAPB
+
+EAPB5250
+
+#### TELLABS Partner Contact
+
+[contactus@telgroup.com](mailto:contactus@telgroup.com)
+[www.telgroup.com](http://www.telgroup.com)
+
+---
+
+# FOOTER
+
+## Footer Columns
+
+### Company
+
+* About Us
+* Careers
+* Contact
+* News
+
+### Business Segments
+
+* Industrial Materials
+* Chemicals
+* Food Distribution
+* Manpower
+
+### Products
+
+* Pipes
+* Valves
+* Water Treatment
+* Rice
+* Palm Oil
+
+### Partners
+
+* TELLABS
+* Strategic Suppliers
+
+### Contact
+
+* Phone
+* Email
+* Address
+
+---
+
+# PAGE DETAILS
+
+# ABOUT PAGE
+
+Sections:
+
+* Company Introduction
+* History
+* Vision & Mission
+* Leadership
+* Why Choose Us
+* Market Reach
+* Warehousing
+* Distribution
+* Growth Strategy
+
+---
+
+# INDUSTRIAL MATERIALS PAGE
+
+Sections:
+
+* Pipes
+* Valves
+* Flanges
+* Electrical Materials
+* Welding Materials
+* Safety Equipment
+* Sanitary Materials
+* Cable Trays
+* Fasteners
+* Construction Chemicals
+
+Include detailed product grids.
+
+---
+
+# FOOD DISTRIBUTION PAGE
+
+Sections:
+
+* Rice Distribution
+* Palm Oil Supply
+* Restaurant Supply
+* Packaging
+* Logistics
+* Warehousing
+* Distribution Network
+* Import Operations
+
+---
+
+# INTELLIGENT CHEMICALS PAGE
+
+Sections:
+
+* Water Treatment
+* Activated Carbon
+* Fuel Additives
+* Defoamers
+* Cleaning & Hygiene
+* Pulp & Paper Solutions
+* Sugar Industry Solutions
+* Polymer Solutions
+
+---
+
+# MANPOWER SUPPLY PAGE
+
+Sections:
+
+* Skilled Labor
+* Welders
+* Electricians
+* Pipe Fitters
+* Shutdown Teams
+* Industrial Support
+* Safety Personnel
+* Construction Teams
+
+---
+
+# TELLABS PARTNERSHIP PAGE
+
+Include:
+
+* TEL Group history
+* Chemical verticals
+* Manufacturing standards
+* International technologies
+* Applications
+* Certifications
+* Industry sectors
+* Product categories
+
+---
+
+# DISTRIBUTION NETWORK PAGE
+
+Sections:
+
+* Saudi coverage
+* Warehousing
+* Transportation
+* Delivery operations
+* Supply chain
+* Future expansion
+
+---
+
+# CAREERS PAGE
+
+Sections:
+
+* Why work with us
+* Company culture
+* Open positions
+* Upload CV
+* Recruitment process
+
+---
+
+# GALLERY PAGE
+
+Sections:
+
+* Industrial projects
+* Warehouses
+* Products
+* Team
+* Deliveries
+* Chemical operations
+
+---
+
+# CONTACT PAGE
+
+Include:
+
+* Large map
+* Contact form
+* WhatsApp CTA
+* Business inquiry section
+* Partner inquiry section
+* Distribution inquiry section
+
+---
+
+# UI/UX FEATURES
+
+## ANIMATIONS
+
+* Smooth fade transitions
+* Hover card animations
+* Image zoom effects
+* Gradient overlays
+* Scroll animations
+* Counter animations
+* Parallax backgrounds
+
+---
+
+# RECOMMENDED HOMEPAGE ORDER
+
+1. Hero Slider
+2. Trust Bar
+3. About Us
+4. Statistics
+5. Business Segments
+6. Industries Served
+7. TELLABS Partnership
+8. Product Showcase
+9. Why Choose Us
+10. Distribution Network
+11. Testimonials
+12. Client Logos
+13. FAQ
+14. Contact Section
+15. Footer
+
+---
+
+# SEO STRATEGY
+
+## Main Keywords
+
+* Industrial materials supplier Saudi Arabia
+* Building materials supplier Dammam
+* Industrial chemicals Saudi Arabia
+* TELLABS distributor Saudi Arabia
+* Restaurant supply Saudi Arabia
+* Rice distributor Saudi Arabia
+* Palm oil supplier Saudi Arabia
+* Manpower supply Dammam
+* Industrial supply company Saudi Arabia
+
+---
+
+# IMAGE STYLE DIRECTION
+
+Use:
+
+* Industrial refinery images
+* Premium warehouse photography
+* Saudi business visuals
+* Chemical processing imagery
+* Logistics & trucking visuals
+* Food distribution imagery
+* Corporate office imagery
+* Industrial workers
+* Oil & gas facilities
+* Large machinery
+
+All images should:
+
+* Be high resolution
+* Use dark overlays
+* Have premium color grading
+* Match blue industrial theme
+
+---
+
+# MOBILE RESPONSIVENESS
+
+Must support:
+
+* Mobile
+* Tablet
+* Large desktop
+* Ultra-wide screens
+
+Mobile navbar should use:
+
+* Fullscreen menu
+* Dropdown accordion
+* Sticky contact button
+
+---
+
+# TECHNOLOGY RECOMMENDATION
+
+## Frontend
+
+* Next.js
+* React
+* Tailwind CSS
+* Framer Motion
+
+## Backend
+
+* Node.js
+* Express
+
+## CMS
+
+* Sanity CMS or Strapi
+
+## Hosting
+
+* Vercel
+* Cloudflare
+
+---
+
+# IMPORTANT CONTENT REFERENCES
+
+Industrial materials and manpower sections are based on the uploaded Albloshi industrial profile. fileciteturn0file0
+
+Food distribution, rice, palm oil, restaurant supply, distribution network, and operations are based on the uploaded Mohammed Al Bloshi Trading Company profile. fileciteturn0file2L1-L1
+
+TELLABS specialty chemical verticals, industrial water treatment, activated carbon, polymers, defoamers, cleaning & hygiene solutions, pulp & paper chemicals, and sugar industry solutions are based on the uploaded TELLABS brochure. fileciteturn0file1
