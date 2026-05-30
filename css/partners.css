@@ -250,7 +250,7 @@
 
 .about-p-text h4 {
     font-size: 1.1rem;
-    color: var(--color-dark);
+    color: var(--color-primary); /* Using the premium primary corporate blue shade */
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
