@@ -169,16 +169,25 @@
         scroll-snap-align: center;
         padding: 2rem 1.5rem;
     }
+    .bento-feature-card {
+        padding: 2.2rem 1.6rem 3.5rem; /* Expanded bottom padding so content sits safely above swiping fingers */
+        min-height: 300px; /* Dedicated height to showcase imagery and ensure breathing room */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
     .bento-icon-small {
         width: 45px;
         height: 45px;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
     }
     .bento-feature-card h4 {
-        font-size: 1.1rem;
+        font-size: 1.4rem; /* Further increased size for prominent title presentation */
+        margin-bottom: 0.5rem;
     }
     .bento-feature-card p {
-        font-size: 0.9rem;
+        font-size: 1.05rem; /* Large, highly legible paragraph body */
+        line-height: 1.45;
     }
 }
 

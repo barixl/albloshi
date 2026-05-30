@@ -169,20 +169,22 @@
         display: none;
     }
 
-    /* Grid: 2 fixed rows, cards flow column-by-column (left to right) */
+    /* Bulletproof Column-wrapping Flexbox to prevent iOS WebKit Grid bugs */
     .partner-logo-grid {
-        display: grid;
-        grid-template-rows: repeat(2, 90px);
-        grid-auto-flow: column;
-        /* Each card is ~40% of viewport so ~2.5 are visible = good peek effect */
-        grid-auto-columns: 42vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 192px; /* 2 rows of 90px + 12px gap */
         gap: 0.75rem;
         width: max-content;
     }
 
     .partner-card {
         padding: 0.8rem;
+        width: 42vw; /* Elegant peek effect width */
+        max-width: 160px; /* Clamp width on tablets */
         height: 90px;
+        flex-shrink: 0; /* Prevent squeezing in flex row */
     }
 
     .partner-card img {

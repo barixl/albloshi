@@ -46,17 +46,10 @@
 }
 
 .showcase-panel {
-    display: none;
+    display: flex !important;
     flex-direction: column;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.showcase-panel.active {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* Wrapper that holds the arrows + scrollable track */
@@ -253,5 +246,139 @@
     }
     .showcase-track-wrapper {
         gap: 0;
+    }
+}
+
+/* ==========================================================================
+   VERTICAL SUB-CATALOG LAYOUT & CUSTOM ANIMATIONS
+   ========================================================================== */
+
+/* Sub-catalog Headings with glowing Icons */
+.showcase-subheading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+    font-weight: 600;
+    color: var(--color-dark, #0b2246);
+    margin-bottom: 1.75rem;
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center; /* Center subheading content horizontally */
+    align-items: center;
+    gap: 0.85rem;
+    border-bottom: 2px solid rgba(11, 34, 70, 0.05);
+    padding-bottom: 0.85rem;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.showcase-subheading .material-icons {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    background: rgba(27, 95, 175, 0.08);
+    padding: 10px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(27, 95, 175, 0.05);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.showcase-panel:hover .showcase-subheading {
+    color: var(--color-primary);
+}
+
+.showcase-panel:hover .showcase-subheading .material-icons {
+    transform: rotate(5deg) scale(1.05);
+    background: var(--color-primary);
+    color: white;
+}
+
+/* First panel does not need a massive top margin */
+.showcase-panel:first-of-type .showcase-subheading {
+    margin-top: 1rem;
+}
+
+/* Elegant visual divider between catalogs */
+.showcase-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(27, 95, 175, 0) 0%, rgba(27, 95, 175, 0.12) 50%, rgba(27, 95, 175, 0) 100%);
+    margin: 4.5rem 0 3.5rem;
+}
+
+/* Rich Smooth Hover Scaling for Images */
+.product-img {
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.1); /* Silky smooth high-res image zoom */
+}
+
+/* Title translation & color transitions on hover */
+.product-title {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover .product-title {
+    color: #4da3ff; /* Glowing bright cyan-blue on hover */
+    transform: translateY(-2px);
+}
+
+/* Description reveal translation */
+.product-desc {
+    opacity: 0.85;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover .product-desc {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Badge glow response */
+.product-badge {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .product-badge {
+    background-color: #10b981; /* Green color feedback on hover */
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+/* Animation Entry Reveal Effect when scrolling */
+@keyframes revealCardSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card {
+    animation: revealCardSlideUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+/* Stagger card animation delays to create a stunning wave entry */
+.showcase-cards-track .product-card:nth-child(1) { animation-delay: 0.05s; }
+.showcase-cards-track .product-card:nth-child(2) { animation-delay: 0.15s; }
+.showcase-cards-track .product-card:nth-child(3) { animation-delay: 0.25s; }
+.showcase-cards-track .product-card:nth-child(4) { animation-delay: 0.35s; }
+.showcase-cards-track .product-card:nth-child(5) { animation-delay: 0.45s; }
+
+/* Custom margins on mobile */
+@media (max-width: 768px) {
+    .showcase-subheading {
+        margin-top: 2rem;
+        margin-bottom: 1.25rem;
+        padding-left: 0.5rem;
+    }
+    
+    .showcase-divider {
+        margin: 2.5rem 0 1.5rem;
     }
 }
