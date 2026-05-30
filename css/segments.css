@@ -1,0 +1,177 @@
+/* ==========================================================================
+   BUSINESS VERTICALS SECTION (ASYMMETRICAL BENTO GRID)
+   ========================================================================== */
+.verticals-section {
+    background-color: var(--color-light); /* Matching light section theme */
+}
+
+/* Equal Bento Grid Layout */
+.verticals-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.v-card {
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    min-height: 450px;
+}
+
+.v-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+}
+
+.v-card-tall {
+    grid-row: span 2;
+}
+
+/* Gradient Overlay for Text Readability */
+.v-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Darkened gradient so white text pops against bright backgrounds like right.png */
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
+    pointer-events: none;
+    transition: background 0.4s ease;
+}
+
+/* Extra dark overlay for bright images or images with clashing text */
+.v-card.dark-overlay::before {
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.65) 100%);
+}
+
+.v-card:hover::before {
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.2) 100%);
+}
+
+.v-badge {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    z-index: 3;
+    box-shadow: 0 4px 10px rgba(27,95,175,0.4);
+}
+
+.v-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.v-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: white;
+    line-height: 1.2;
+}
+
+.v-card-tall .v-content h3 {
+    font-size: 2.5rem; /* Larger title for primary card */
+    margin-bottom: 0.8rem;
+}
+
+.v-content p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 95%;
+}
+
+.v-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    background: rgba(255,255,255,0.15);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.v-card:hover .v-link {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.v-link .material-icons {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.v-card:hover .v-link .material-icons {
+    transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .verticals-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .v-card:nth-child(3) {
+        grid-column: span 2; /* Center the third card to balance */
+    }
+    .v-card {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .verticals-bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .v-card:nth-child(3) {
+        grid-column: span 1;
+    }
+    .v-card {
+        padding: 1.5rem;
+        min-height: 350px;
+        box-shadow: 0 15px 45px rgba(0,0,0,0.15); /* Permanent hover shadow */
+    }
+    /* Permanent hover gradient overlay on mobile */
+    .v-card::before {
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.2) 100%);
+    }
+    .v-badge {
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+    .v-content h3 {
+        font-size: 1.6rem;
+    }
+    .v-content p {
+        font-size: 0.95rem;
+    }
+    /* Permanent hover button styling on mobile */
+    .v-link {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+}

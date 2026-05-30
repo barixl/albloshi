@@ -1,0 +1,150 @@
+/* ==========================================================================
+   DISTRIBUTION NETWORK SECTION (DARK INTERACTIVE MAP)
+   ========================================================================== */
+.network-hero {
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.network-interactive-map {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+    background: #0a192f;
+    height: 400px;
+}
+
+.network-map-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.4;
+    filter: grayscale(80%) contrast(1.2);
+}
+
+.map-overlay-dark {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(5,25,55,0.8) 100%);
+    pointer-events: none;
+}
+
+/* Floating Cards & Dots */
+.map-floating-card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.map-floating-card:hover {
+    transform: translateY(-5px);
+    z-index: 20;
+}
+
+.pulse-dot {
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 0 rgba(27, 95, 175, 0.7);
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(27, 95, 175, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(27, 95, 175, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(27, 95, 175, 0); }
+}
+
+.glass-card-dark {
+    background: rgba(10, 25, 47, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+
+.glass-card-dark h4 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.glass-card-dark span {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.8rem;
+}
+
+/* Absolute Positioning for Saudi Cities (Approximated on a landscape map) */
+.card-dammam {
+    top: 35%;
+    right: 25%;
+}
+
+.card-khobar {
+    top: 45%;
+    right: 20%;
+}
+
+.card-jubail {
+    top: 25%;
+    right: 28%;
+}
+
+.card-other {
+    top: 55%;
+    left: 25%;
+}
+
+.card-other .pulse-dot {
+    background-color: #d4a017; /* Gold for expansion/others */
+    box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.7);
+    animation: pulse-ring-gold 2s infinite;
+}
+
+@keyframes pulse-ring-gold {
+    0% { box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 160, 23, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 160, 23, 0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .network-interactive-map {
+        min-height: 650px;
+    }
+    .map-floating-card {
+        position: relative;
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+        bottom: auto !important;
+        margin: 1.5rem auto;
+        width: 90%;
+    }
+    .glass-card-dark {
+        white-space: normal;
+    }
+    .network-map-bg {
+        position: absolute;
+        inset: 0;
+    }
+}
+

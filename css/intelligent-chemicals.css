@@ -1,0 +1,340 @@
+/* ==========================================================================
+   INTELLIGENT CHEMICALS PROCESS SECTION
+   ========================================================================== */
+.intel-process-section {
+    position: relative;
+    overflow: hidden;
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+    background-color: var(--color-light);
+    background-image: linear-gradient(rgba(248, 250, 252, 0.3), rgba(248, 250, 252, 0.6)), url('../checmical_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.intel-process-header {
+    margin-bottom: 4rem;
+}
+
+.intel-process-header .section-title {
+    margin-bottom: 1rem;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(220px, auto);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem; /* Reduced space after cards */
+}
+
+/* Base styling for all Bento cards */
+.bento-card {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.03);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+}
+
+/* 1. Header Card (Spans 2 columns, 1 row) */
+.bento-header-card {
+    grid-column: span 2;
+    grid-row: span 1;
+    background: #0b2246; /* Deep premium navy blue */
+    justify-content: center;
+    align-items: flex-start; /* Prevents inline-block label from stretching */
+}
+
+.bento-header-card .section-title {
+    text-align: left !important;
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem) !important; /* Scaled down to match other sections */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.bento-header-card .large-para {
+    font-size: 1.05rem !important; /* Matches 'Who We Are' paragraph size */
+    line-height: 1.6;
+}
+
+.bento-header-card .section-title::after {
+    display: none; /* Remove global centered underline */
+}
+
+/* 2. Feature Cards (Image Based) */
+.bento-feature-card {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.img-bento {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+
+.img-bento::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Stronger gradient for legibility against bright images */
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.45) 100%);
+    z-index: 1;
+}
+
+.img-bento > * {
+    position: relative;
+    z-index: 2;
+}
+
+.bento-icon-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bento-icon-small .material-icons {
+    font-size: 1.2rem;
+}
+
+.bento-feature-card h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.bento-feature-card p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+    line-height: 1.5;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+}
+
+/* --- Responsive Layout Adjustments --- */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bento-header-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 2rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar in Firefox */
+        margin-left: -15px; /* Bleed edge */
+        margin-right: -15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        gap: 1rem;
+    }
+    .bento-grid::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in Chrome/Safari */
+    }
+    .bento-card {
+        flex: 0 0 85%; /* Each card takes up 85% of screen width */
+        scroll-snap-align: center;
+        padding: 2rem 1.5rem;
+    }
+    .bento-icon-small {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 1rem;
+    }
+    .bento-feature-card h4 {
+        font-size: 1.1rem;
+    }
+    .bento-feature-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Trust Banner at bottom */
+.intel-trust-banner {
+    background: #0b2246; /* Dark theme */
+    border-radius: 16px;
+    padding: 1.5rem 3rem; /* Tighter top/bottom padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.intel-trust-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.trust-shield {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.trust-text h5 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.trust-text p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.intel-trust-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 320px; /* Give more width for Tellabs side */
+    padding-left: 3rem;
+    border-left: 1px solid rgba(255,255,255,0.15); /* Divider */
+}
+
+.intel-trust-right > span:first-child {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.partner-logo-text {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-style: italic;
+    color: #4da3ff; /* Bright blue to pop on dark */
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.partner-logo-text small {
+    font-size: 0.85rem;
+    font-style: normal;
+    display: block;
+    color: white;
+    letter-spacing: 1px;
+    margin-top: 0.4rem;
+}
+
+/* Responsive adjustments for banner */
+@media (max-width: 992px) {
+    .intel-trust-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+    .intel-trust-left {
+        flex-direction: column;
+    }
+    .intel-trust-right {
+        min-width: 100%;
+        padding-left: 0;
+        border-left: none;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(255,255,255,0.15);
+    }
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+    .process-grid {
+        gap: 1rem;
+    }
+    .process-card {
+        padding: 2.5rem 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Horizontal scrolling on tablets/mobile */
+    .process-track-wrapper {
+        margin: 0 -1.25rem 3rem; /* Bleed to edge */
+        padding: 0 1.25rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .process-track-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .process-line {
+        width: 1500px; /* Force wide line for scrolling */
+        left: 1.25rem;
+    }
+    
+    .process-grid {
+        grid-template-columns: repeat(6, 250px);
+        width: max-content;
+        padding-bottom: 1rem;
+    }
+    
+    .intel-trust-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    
+    .intel-trust-left {
+        flex-direction: column;
+    }
+    
+    .intel-trust-right {
+        border-left: none;
+        border-top: 1px solid var(--color-border);
+        padding-left: 0;
+        padding-top: 1.5rem;
+        width: 100%;
+        align-items: center;
+    }
+}

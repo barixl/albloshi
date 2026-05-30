@@ -216,10 +216,88 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetPanel = document.getElementById(targetTab);
             if (targetPanel) {
                 targetPanel.classList.add('active');
-                targetPanel.scrollLeft = 0;
+                const track = targetPanel.querySelector('.showcase-cards-track');
+                if (track) {
+                    track.scrollLeft = 0;
+                    // Allow DOM to update display:flex before checking widths
+                    setTimeout(() => track.dispatchEvent(new Event('scroll')), 10);
+                }
             }
         });
     });
+
+    /* ==========================================================================
+       PRODUCT SHOWCASE ARROW NAVIGATION
+       ========================================================================== */
+    document.querySelectorAll('.showcase-track-wrapper').forEach(wrapper => {
+        const track = wrapper.querySelector('.showcase-cards-track');
+        const prevBtn = wrapper.querySelector('.showcase-arrow-prev');
+        const nextBtn = wrapper.querySelector('.showcase-arrow-next');
+
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const scrollByAmount = () => {
+            const card = track.querySelector('.product-card');
+            return card ? card.offsetWidth + 24 : 320; // card width + 1.5rem gap
+        };
+
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: scrollByAmount(), behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -scrollByAmount(), behavior: 'smooth' });
+        });
+
+        // Update disabled state on scroll
+        const updateArrows = () => {
+            // Using Math.ceil to avoid floating point scroll issues
+            prevBtn.disabled = track.scrollLeft <= 0;
+            nextBtn.disabled = Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth;
+        };
+
+        track.addEventListener('scroll', updateArrows);
+        
+        // Initial state update (with a tiny delay in case it's a hidden tab on load)
+        setTimeout(updateArrows, 50);
+        
+        // Update on resize too
+        window.addEventListener('resize', updateArrows);
+    });
+
+    /* ==========================================================================
+       TESTIMONIALS SLIDER NAVIGATION
+       ========================================================================== */
+    const reviewsWrapper = document.querySelector('.reviews-carousel-wrapper');
+    if (reviewsWrapper) {
+        const viewport = reviewsWrapper.querySelector('.reviews-viewport');
+        const prevReviewBtn = reviewsWrapper.querySelector('.reviews-arrow-prev');
+        const nextReviewBtn = reviewsWrapper.querySelector('.reviews-arrow-next');
+
+        if (viewport && prevReviewBtn && nextReviewBtn) {
+            const scrollReviewsBy = () => {
+                const card = viewport.querySelector('.review-card');
+                return card ? card.offsetWidth + 24 : 350; // card width + gap
+            };
+
+            nextReviewBtn.addEventListener('click', () => {
+                viewport.scrollBy({ left: scrollReviewsBy(), behavior: 'smooth' });
+            });
+
+            prevReviewBtn.addEventListener('click', () => {
+                viewport.scrollBy({ left: -scrollReviewsBy(), behavior: 'smooth' });
+            });
+
+            const updateReviewArrows = () => {
+                prevReviewBtn.disabled = viewport.scrollLeft <= 0;
+                nextReviewBtn.disabled = Math.ceil(viewport.scrollLeft + viewport.clientWidth) >= viewport.scrollWidth;
+            };
+
+            viewport.addEventListener('scroll', updateReviewArrows);
+            setTimeout(updateReviewArrows, 50);
+            window.addEventListener('resize', updateReviewArrows);
+        }
+    }
 
     /* ==========================================================================
        FAQ ACCORDION TOGGLE
@@ -267,36 +345,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ==========================================================================
-       REVIEWS CAROUSEL
-       ========================================================================== */
-    const reviewsTrack = document.querySelector('.reviews-track');
-    const reviewDots   = document.querySelectorAll('.reviews-dot');
-    const prevBtn      = document.querySelector('.reviews-arrow-prev');
-    const nextBtn      = document.querySelector('.reviews-arrow-next');
-    const totalReviews = document.querySelectorAll('.review-card').length;
-    let currentReview  = 0;
 
-    function goToReview(index) {
-        if (index < 0) index = totalReviews - 1;
-        if (index >= totalReviews) index = 0;
-        currentReview = index;
-        reviewsTrack.style.transform = `translateX(-${currentReview * 100}%)`;
-        reviewDots.forEach((d, i) => d.classList.toggle('active', i === currentReview));
-    }
-
-    if (reviewsTrack && totalReviews > 0) {
-        prevBtn && prevBtn.addEventListener('click', () => goToReview(currentReview - 1));
-        nextBtn && nextBtn.addEventListener('click', () => goToReview(currentReview + 1));
-        reviewDots.forEach((dot, i) => dot.addEventListener('click', () => goToReview(i)));
-
-        // Touch swipe
-        let touchStartX = 0;
-        const viewport = document.querySelector('.reviews-viewport');
-        viewport.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
-        viewport.addEventListener('touchend', e => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 40) goToReview(currentReview + (diff > 0 ? 1 : -1));
-        }, { passive: true });
-    }
 });

@@ -1,0 +1,47 @@
+/* ==========================================================================
+   CUSTOMERS SECTION (logo grid, 2 rows of 5)
+   ========================================================================== */
+.customers-section {
+    background-color: var(--color-light);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.customers-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+.customer-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff 0%, #EEF4FC 100%);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 1.5rem 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.customer-logo-item:hover {
+    background: linear-gradient(135deg, #EEF4FC 0%, #D6E8F9 100%);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(14, 108, 196, 0.12);
+}
+
+.customer-logo-text {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: color 0.2s ease;
+}
+
+.customer-logo-item:hover .customer-logo-text {
+    color: var(--color-primary);
+}
+

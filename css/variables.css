@@ -1,0 +1,33 @@
+/* ==========================================================================
+   DESIGN SYSTEM VARIABLES
+   ========================================================================== */
+:root {
+    /* Color Palette (Matched with logo) */
+    --color-primary: #1B5FAF;
+    --color-secondary: #173B7A;
+    --color-gradient-start: #0E6CC4;
+    --color-gradient-end: #214E9A;
+    --color-accent-light: #E6F0FC;
+    --color-dark: #000000;
+    --color-dark-bg: #0F172A;
+    --color-body: #000000;
+    --color-light: #F8FAFC;
+    --color-border: #E2E8F0;
+    --color-white: #FFFFFF;
+
+    /* Box Shadows */
+    --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 10px 20px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+    --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+
+    /* Font Sizes (Fluid Scale) */
+    --font-heading: 'Poppins', sans-serif;
+    --font-sans: 'Poppins', sans-serif;
+
+    /* Transitions */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+

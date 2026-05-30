@@ -1,0 +1,102 @@
+/* ==========================================================================
+   BLOG CTA SECTION
+   ========================================================================== */
+.blog-cta-section {
+    background-color: transparent;
+    padding: 3rem 0 4rem;
+}
+
+.blog-cta-card {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 50%, var(--color-gradient-start) 100%);
+    border: none;
+    border-radius: 16px;
+    padding: 3.5rem 4rem;
+    box-shadow: 0 12px 40px rgba(27, 95, 175, 0.30);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative circle accent */
+.blog-cta-card::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+}
+
+.blog-cta-card::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 30%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+}
+
+.blog-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.blog-cta-text h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--color-white);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+    max-width: 560px;
+}
+
+.blog-cta-text p {
+    font-size: 1.05rem;
+    color: #FFFFFF;
+    line-height: 1.7;
+    max-width: 540px;
+}
+
+.blog-cta-actions {
+    display: flex;
+    gap: 1.2rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+/* Outline button on colored background */
+.blog-cta-actions .btn-outline {
+    color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.6);
+    background: transparent;
+}
+
+.blog-cta-actions .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-white);
+    color: var(--color-white);
+}
+
+/* Primary button on colored background — white fill */
+.blog-cta-actions .btn-primary {
+    background: var(--color-white);
+    color: var(--color-primary);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.blog-cta-actions .btn-primary:hover {
+    background: var(--color-accent-light);
+    color: var(--color-secondary);
+}
+

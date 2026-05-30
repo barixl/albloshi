@@ -1,0 +1,64 @@
+/* ==========================================================================
+   TRUST FEATURES BAR
+   ========================================================================== */
+.trust-bar {
+    background-color: var(--color-dark-bg); /* Deep Slate-Blue brand dark background, identical to dark sections */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Soft semi-transparent separators */
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    z-index: 5;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Balanced 4-column layout */
+}
+
+.trust-item {
+    display: flex;
+    align-items: center; /* Perfectly centered vertically */
+    justify-content: center; /* Perfectly centered horizontally inside grid tracks */
+    gap: 1.25rem;
+    padding: 2.25rem 1.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.08); /* Soft semi-transparent separators */
+    transition: var(--transition-smooth);
+}
+
+.trust-item:last-child {
+    border-right: none;
+}
+
+.trust-item:hover {
+    background-color: rgba(255, 255, 255, 0.03); /* Sleek translucent white highlight on hover */
+}
+
+/* Premium Google Material Icon */
+.trust-icon {
+    font-size: 2.5rem; /* Clean large visual icon */
+    color: #38BDF8; /* Glowing Sky Blue to pop on dark background, consistent with slider badge theme */
+    flex-shrink: 0;
+    transition: var(--transition-smooth);
+    filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.3)); /* Soft atmospheric sky-blue glow */
+}
+
+.trust-item:hover .trust-icon {
+    color: var(--color-white);
+    transform: scale(1.1); /* Elegant zoom animation on hover */
+    filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.5));
+}
+
+.trust-info h4 {
+    font-family: var(--font-sans);
+    font-size: 1.05rem; /* Standardized slightly larger header */
+    font-weight: 700;
+    color: var(--color-white); /* Pure white headings for perfect readability */
+    margin-bottom: 0.35rem; /* Generous space under title */
+}
+
+.trust-info p {
+    font-size: 0.9rem; /* Increased from 0.8rem for superior legibility */
+    line-height: 1.5; /* Comfortable spacing */
+    margin: 0;
+    color: #FFFFFF; /* Elegant slate-grey for clean content contrast and modern hierarchy */
+}
+

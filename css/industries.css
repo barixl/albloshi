@@ -1,0 +1,82 @@
+/* ==========================================================================
+   INDUSTRIES WE SERVE SECTION
+   ========================================================================== */
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+}
+
+.industry-card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-slow);
+}
+
+.industry-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: var(--transition-slow);
+    z-index: 1;
+}
+
+.industry-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(14, 108, 196, 0.9) 15%, rgba(9, 15, 29, 0.5) 60%, rgba(9, 15, 29, 0.2) 100%);
+    z-index: 2;
+    transition: var(--transition-smooth);
+}
+
+.industry-content {
+    position: relative;
+    z-index: 3;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.industry-name {
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    transition: var(--transition-smooth);
+}
+
+.industry-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #FFFFFF;
+    opacity: 1;
+    margin: 0;
+}
+
+.industry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(14, 108, 196, 0.25);
+}
+
+.industry-card:hover .industry-bg {
+    transform: scale(1.08);
+}
+

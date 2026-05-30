@@ -1,0 +1,115 @@
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-body);
+    background-color: var(--color-light);
+    overflow-x: hidden;
+}
+
+/* Typography Elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 500;
+}
+
+h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+/* Global Heading Centering */
+.section-title {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+/* Styled Underline for Headings matching the image */
+h2.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+h2.section-title.center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h2.section-title.text-left {
+    text-align: left;
+}
+
+h2.section-title.text-left::after {
+    left: 0;
+    transform: none;
+}
+
+h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    margin-bottom: 1rem;
+}
+
+/* Paragraph styling strictly following instruction for large paragraphs */
+p.large-para {
+    font-size: clamp(1.1rem, 2vw, 1.22rem);
+    line-height: 1.8;
+    color: var(--color-body);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+

@@ -1,0 +1,89 @@
+/* ==========================================================================
+   UTILITY & BUTTONS
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    /* Decreased horizontal padding to 0.5rem to maximize website canvas space */
+}
+
+.section-padding {
+    padding: 5rem 0;
+}
+
+.bg-dark-section {
+    background-color: var(--color-dark-bg);
+    color: var(--color-white);
+}
+
+.bg-dark-section h2,
+.bg-dark-section h3 {
+    color: var(--color-white);
+}
+
+.bg-dark-section p {
+    color: #FFFFFF;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Gradient text accent inspired by logo */
+.gradient-text {
+    background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Premium Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.25rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(14, 108, 196, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 108, 196, 0.45);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    transform: translateY(-2px);
+}
+
+.btn-dark {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.btn-dark:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
