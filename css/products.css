@@ -178,25 +178,26 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
+    filter: brightness(1.05) contrast(1.02); /* Universal soft boost for high-visibility & clear colors */
 }
 
 .product-card:hover .product-img {
     transform: scale(1.05);
 }
 
-/* Dark Gradient Overlay */
+/* Unified Premium Gradient Overlay (for perfect image visibility and text readability) */
 .product-card::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.08) 100%);
     z-index: 1;
     pointer-events: none;
     transition: background 0.4s ease;
 }
 
 .product-card:hover::before {
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.2) 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.84) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.04) 100%);
 }
 
 .product-badge {
@@ -370,15 +371,139 @@
 .showcase-cards-track .product-card:nth-child(4) { animation-delay: 0.35s; }
 .showcase-cards-track .product-card:nth-child(5) { animation-delay: 0.45s; }
 
-/* Custom margins on mobile */
 @media (max-width: 768px) {
     .showcase-subheading {
         margin-top: 2rem;
         margin-bottom: 1.25rem;
-        padding-left: 0.5rem;
+        padding-left: 0;
+        flex-direction: column;
+        gap: 0.5rem;
     }
     
     .showcase-divider {
         margin: 2.5rem 0 1.5rem;
     }
+}
+
+/* ==========================================================================
+   CHEMICAL SOLUTIONS THEME (DEEP NAVY & CYAN Accents)
+   ========================================================================== */
+.chemical-theme .showcase-subheading .material-icons {
+    color: #0B1F3A; /* Deep Navy Blue */
+    background: rgba(11, 31, 58, 0.08);
+    box-shadow: 0 4px 10px rgba(11, 31, 58, 0.05);
+}
+
+.chemical-theme:hover .showcase-subheading {
+    color: #0B1F3A !important;
+}
+
+.chemical-theme:hover .showcase-subheading .material-icons {
+    background: #0B1F3A !important;
+    color: white !important;
+}
+
+.chemical-theme .product-badge {
+    background: #0B1F3A !important;
+    box-shadow: 0 4px 10px rgba(11, 31, 58, 0.3) !important;
+}
+
+.chemical-theme .product-card:hover .product-badge {
+    background-color: #00A3A3 !important; /* Accent Cyan */
+    box-shadow: 0 4px 15px rgba(0, 163, 163, 0.4) !important;
+}
+
+.chemical-theme .product-card:hover .product-title {
+    color: #00A3A3 !important;
+}
+
+.chemical-theme .showcase-page-btn {
+    background: linear-gradient(135deg, #5C6770, #0B1F3A) !important;
+    box-shadow: 0 8px 20px rgba(11, 31, 58, 0.22) !important;
+}
+
+.chemical-theme .showcase-page-btn:hover {
+    box-shadow: 0 12px 28px rgba(11, 31, 58, 0.3) !important;
+}
+
+/* ==========================================================================
+   WARM PREMIUM FOOD THEME (OLIVE GREEN & SOFT GOLD Accents)
+   ========================================================================== */
+.food-theme .showcase-subheading .material-icons {
+    color: #6B8E23; /* Olive Green */
+    background: rgba(107, 142, 35, 0.08);
+    box-shadow: 0 4px 10px rgba(107, 142, 35, 0.05);
+}
+
+.food-theme:hover .showcase-subheading {
+    color: #6B8E23 !important;
+}
+
+.food-theme:hover .showcase-subheading .material-icons {
+    background: #6B8E23 !important;
+    color: white !important;
+}
+
+.food-theme .product-badge {
+    background: #6B8E23 !important;
+    box-shadow: 0 4px 10px rgba(107, 142, 35, 0.3) !important;
+}
+
+.food-theme .product-card:hover .product-badge {
+    background-color: #C8A951 !important; /* Soft Gold */
+    box-shadow: 0 4px 15px rgba(200, 169, 81, 0.4) !important;
+}
+
+.food-theme .product-card:hover .product-title {
+    color: #C8A951 !important;
+}
+
+.food-theme .showcase-page-btn {
+    background: linear-gradient(135deg, #C8A951, #6B8E23) !important;
+    box-shadow: 0 8px 20px rgba(107, 142, 35, 0.22) !important;
+}
+
+.food-theme .showcase-page-btn:hover {
+    box-shadow: 0 12px 28px rgba(107, 142, 35, 0.3) !important;
+}
+
+/* ==========================================================================
+   INDUSTRIAL TRADING THEME (CHARCOAL & ROYAL BLUE Accents)
+   ========================================================================== */
+.industrial-theme .showcase-subheading .material-icons {
+    color: #333333; /* Charcoal Gray */
+    background: rgba(51, 51, 51, 0.08);
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.05);
+}
+
+.industrial-theme:hover .showcase-subheading {
+    color: #333333 !important;
+}
+
+.industrial-theme:hover .showcase-subheading .material-icons {
+    background: #333333 !important;
+    color: white !important;
+}
+
+.industrial-theme .product-badge {
+    background: #333333 !important;
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.3) !important;
+}
+
+.industrial-theme .product-card:hover .product-badge {
+    background-color: #1E4E8C !important; /* Royal Blue */
+    box-shadow: 0 4px 15px rgba(30, 78, 140, 0.4) !important;
+}
+
+.industrial-theme .product-card:hover .product-title {
+    color: #1E4E8C !important; 
+}
+
+.industrial-theme .showcase-page-btn {
+    background: linear-gradient(135deg, #B0B7C3, #333333) !important;
+    box-shadow: 0 8px 20px rgba(51, 51, 51, 0.22) !important;
+}
+
+.industrial-theme .showcase-page-btn:hover {
+    box-shadow: 0 12px 28px rgba(51, 51, 51, 0.3) !important;
 }

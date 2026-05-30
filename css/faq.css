@@ -14,8 +14,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.85); /* Ensures text remains highly readable */
-    backdrop-filter: blur(4px); /* Slight blur on the background itself */
+    background: rgba(255, 255, 255, 0.62); /* Reduced opacity from 0.85 to 0.62 to increase background image visibility */
+    backdrop-filter: blur(2px); /* Softened blur from 4px to 2px for better clarity */
     z-index: -1;
 }
 

@@ -223,6 +223,9 @@
     display: flex;
     gap: 1.25rem;
     align-items: flex-start;
+    background-color: var(--color-primary);
+    padding: 1.5rem;
+    border-radius: 16px;
 }
 
 .about-p-icon {
@@ -230,18 +233,18 @@
     height: 50px;
     min-width: 50px;
     border-radius: 12px;
-    background-color: rgba(27, 95, 175, 0.08);
-    color: var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .about-p-feature:hover .about-p-icon {
     transform: scale(1.1);
-    background-color: var(--color-primary);
-    color: white;
+    background-color: white;
+    color: var(--color-primary);
 }
 
 .about-p-icon .material-icons {
@@ -250,14 +253,14 @@
 
 .about-p-text h4 {
     font-size: 1.1rem;
-    color: var(--color-primary); /* Using the premium primary corporate blue shade */
+    color: white;
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
 
 .about-p-text p {
     font-size: 0.9rem;
-    color: var(--color-body);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
     margin: 0;
 }
@@ -335,7 +338,7 @@
     .about-p-feature {
         flex: 0 0 85%;
         scroll-snap-align: center;
-        background: rgba(27, 95, 175, 0.03);
+        background-color: var(--color-primary);
         padding: 1.5rem;
         border-radius: 16px;
         flex-direction: column;

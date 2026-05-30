@@ -42,20 +42,20 @@
     content: '';
     position: absolute;
     inset: 0;
-    /* Darkened gradient so white text pops against bright backgrounds like right.png */
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 100%);
+    /* Slightly lightened gradient to increase background image visibility very little */
+    background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.18) 100%);
     z-index: 1;
     pointer-events: none;
     transition: background 0.4s ease;
 }
 
-/* Extra dark overlay for bright images or images with clashing text */
+/* Extra dark overlay for bright images or images with clashing text - slightly lightened */
 .v-card.dark-overlay::before {
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.65) 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.70) 50%, rgba(0,0,0,0.40) 100%);
 }
 
 .v-card:hover::before {
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.2) 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.10) 100%);
 }
 
 .v-badge {
@@ -153,11 +153,12 @@
     .v-card {
         padding: 1.5rem;
         min-height: 350px;
+        transform: translateY(-5px);
         box-shadow: 0 15px 45px rgba(0,0,0,0.15); /* Permanent hover shadow */
     }
-    /* Permanent hover gradient overlay on mobile */
+    /* Permanent hover gradient overlay on mobile - slightly lightened */
     .v-card::before {
-        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.2) 100%);
+        background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.10) 100%);
     }
     .v-badge {
         top: 1.5rem;
@@ -173,5 +174,8 @@
     .v-link {
         background: var(--color-primary);
         border-color: var(--color-primary);
+    }
+    .v-link .material-icons {
+        transform: translateX(4px);
     }
 }
