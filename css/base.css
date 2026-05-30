@@ -113,3 +113,26 @@ img {
     display: block;
 }
 
+/* Global Section Focus Label (Capsule Pill Shape) */
+.focus-label {
+    display: inline-block;
+    padding: 0.45rem 1.25rem;
+    border-radius: 50px;
+    background: rgba(27, 95, 175, 0.06); /* Soft blue/primary tint */
+    border: 1px solid rgba(27, 95, 175, 0.15);
+    color: var(--color-primary, #0e6cc4);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+.focus-label.on-dark {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
