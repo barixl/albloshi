@@ -1,11 +1,13 @@
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MobileFooterBar from '../components/MobileFooterBar';
 import WhatsAppFloat from '../components/WhatsAppFloat';
+import { supabase } from '../lib/supabase';
 
-const ARTICLES = [
+const STATIC_ARTICLES = [
   {
     id: 'industrial-supplies',
     img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
@@ -15,6 +17,7 @@ const ARTICLES = [
     title: 'GCC Supply Chain Resilience: Navigating Steel and Piping Sourcing in 2026',
     excerpt: 'With infrastructure investments expanding across the Kingdom under Vision 2030, secure sourcing of high-grade carbon and stainless steel piping materials represents a critical operational bottleneck. We examine dynamic raw material scales and routing protocols for secure project delivery.',
     href: '/industrial-services',
+    static: true,
   },
   {
     id: 'water-chemistry',
@@ -25,6 +28,7 @@ const ARTICLES = [
     title: 'Industrial Water Chemistry: How TELLABS Formulations Meet SASO & GCC Regulatory Rules',
     excerpt: 'Modern industrial wastewater recycling requires custom water treatment polymers and coagulants to meet extreme salinity tolerances. Explore how our exclusive partnership with TELLABS delivers advanced process chemistry solutions certified to SASO environmental frameworks.',
     href: '/intelligent-chemicals',
+    static: true,
   },
   {
     id: 'food-trading',
@@ -33,8 +37,9 @@ const ARTICLES = [
     date: 'May 12, 2026',
     read: '4 Min Read',
     title: 'Regional Food Sourcing Stability: Sourcing Bulk Basmati Rice and Cooking Palm Oil',
-    excerpt: 'Navigating global agricultural trade lanes requires sophisticated cold-chain reserves and advanced supply fleets. Discover Albloshi\'s large-scale wholesale import systems that maintain inventory continuity for double-refined palm oil and premium Basmati rice across Saudi retail channels.',
+    excerpt: "Navigating global agricultural trade lanes requires sophisticated cold-chain reserves and advanced supply fleets. Discover Albloshi's large-scale wholesale import systems that maintain inventory continuity for double-refined palm oil and premium Basmati rice across Saudi retail channels.",
     href: '/food-services',
+    static: true,
   },
   {
     id: 'manpower-supply',
@@ -43,8 +48,9 @@ const ARTICLES = [
     date: 'May 05, 2026',
     read: '7 Min Read',
     title: 'Compliance First: Implementing Saudi Aramco Certification Standards in Skilled Manpower',
-    excerpt: 'Industrial shutdowns and petrochemical installations demand heavy structural welders and piping fitters that hold high-integrity compliance clearances. We review Albloshi\'s safety onboarding and intensive verification process that delivers fully certified teams to Aramco sites.',
+    excerpt: "Industrial shutdowns and petrochemical installations demand heavy structural welders and piping fitters that hold high-integrity compliance clearances. We review Albloshi's safety onboarding and intensive verification process that delivers fully certified teams to Aramco sites.",
     href: '/contact',
+    static: true,
   },
   {
     id: 'vision-2030',
@@ -53,8 +59,9 @@ const ARTICLES = [
     date: 'Apr 28, 2026',
     read: '5 Min Read',
     title: 'Vision 2030 Mega-Projects: What Construction Material Suppliers Must Know',
-    excerpt: 'Saudi Arabia\'s giga-projects — NEOM, Qiddiya, and the Red Sea Project — are driving unprecedented demand for seamless carbon steel and stainless piping. Albloshi maps the sourcing opportunities and compliance checkpoints for qualified suppliers.',
+    excerpt: "Saudi Arabia's giga-projects — NEOM, Qiddiya, and the Red Sea Project — are driving unprecedented demand for seamless carbon steel and stainless piping. Albloshi maps the sourcing opportunities and compliance checkpoints for qualified suppliers.",
     href: '/industrial-services',
+    static: true,
   },
   {
     id: 'activated-carbon',
@@ -65,10 +72,30 @@ const ARTICLES = [
     title: 'Activated Carbon in GCC Water Purification: Specifications and Market Overview',
     excerpt: 'High-grade activated carbon is a critical component in municipal and industrial water purification across the Gulf. We review the key specifications — iodine value, mesh size, and moisture content — that procurement teams must evaluate when sourcing for desalination plants.',
     href: '/intelligent-chemicals',
+    static: true,
   },
 ];
 
+const fmt = (iso) =>
+  new Date(iso).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+
 export default function Blog() {
+  const [posts,   setPosts]   = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!supabase) { setLoading(false); return; }
+    supabase
+      .from('blogs')
+      .select('id, title, slug, excerpt, cover_image, category, published_at, created_at, author')
+      .eq('status', 'published')
+      .order('published_at', { ascending: false })
+      .then(({ data }) => {
+        setPosts(data ?? []);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -92,8 +119,48 @@ export default function Blog() {
       {/* Articles Grid */}
       <section className="blog-section section-padding">
         <div className="container">
+
+          {/* Dynamic posts from admin */}
+          {!loading && posts.length > 0 && (
+            <>
+              <h2 className="section-title" style={{ marginBottom: '2rem' }}>Latest Posts</h2>
+              <div className="blog-grid" style={{ marginBottom: '3.5rem' }}>
+                {posts.map(post => (
+                  <article key={post.id} className="blog-card">
+                    <div className="blog-card-img-wrapper">
+                      <img
+                        src={post.cover_image || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'}
+                        alt={post.title}
+                        className="blog-card-img"
+                      />
+                      {post.category && <span className="blog-card-tag">{post.category}</span>}
+                    </div>
+                    <div className="blog-card-body">
+                      <div className="blog-card-meta">
+                        <span>{fmt(post.published_at || post.created_at)}</span>
+                        {post.author && <><span className="meta-divider">•</span><span>{post.author}</span></>}
+                      </div>
+                      <h3>{post.title}</h3>
+                      {post.excerpt && <p>{post.excerpt}</p>}
+                      <Link to={`/blog/${post.slug}`} className="blog-card-btn">Read Article</Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+              <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', marginBottom: '3.5rem' }} />
+              <h2 className="section-title" style={{ marginBottom: '2rem' }}>Industry Insights</h2>
+            </>
+          )}
+
+          {loading && (
+            <div style={{ textAlign: 'center', padding: '2rem 0 3rem', color: '#94a3b8', fontSize: '0.95rem' }}>
+              Loading posts…
+            </div>
+          )}
+
+          {/* Static editorial articles */}
           <div className="blog-grid">
-            {ARTICLES.map(article => (
+            {STATIC_ARTICLES.map(article => (
               <article key={article.id} className="blog-card" id={article.id}>
                 <div className="blog-card-img-wrapper">
                   <img src={article.img} alt={article.tag} className="blog-card-img" />
@@ -112,6 +179,7 @@ export default function Blog() {
               </article>
             ))}
           </div>
+
         </div>
       </section>
 

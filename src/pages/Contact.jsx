@@ -20,19 +20,24 @@ export default function Contact() {
     setSubmitting(true);
     try {
       if (supabase) {
-        const { error } = await supabase.from('inquiries').insert([{
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
+        const { error } = await supabase.from('leads').insert([{
+          name:    form.name,
+          email:   form.email,
+          phone:   form.phone,
           service: form.service,
           message: form.message,
+          status:  'new',
+          read:    false,
+          source:  'contact_form',
         }]);
         if (error) throw error;
       }
       toast.success(`Thank you, ${form.name}! Your inquiry has been sent. Our team will contact you shortly.`);
       setForm({ name: '', email: '', phone: '', service: 'Industrial Materials', message: '' });
-    } catch {
-      toast.error('Something went wrong. Please try again or contact us directly.');
+    } catch (err) {
+      console.error('Contact form error:', err);
+      const msg = err?.message || err?.details || 'Something went wrong. Please try again or contact us directly.';
+      toast.error(msg, { duration: 8000 });
     }
     setSubmitting(false);
   };
