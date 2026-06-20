@@ -1,0 +1,707 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Materials & Building Solutions | ALBLOSHI</title>
+    <meta name="description" content="Albloshi supplies premium industrial piping materials, valves, flanges, cable trays, and welding consumables across Saudi Arabia. ASTM/ASME certified supply for oil & gas, construction, and manufacturing sectors.">
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Link Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* â”€â”€ PAGE HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .page-hero {
+            position: relative;
+            padding: 9rem 0 6rem;
+            background-image:
+                linear-gradient(135deg, rgba(9, 20, 45, 0.88) 0%, rgba(14, 108, 196, 0.72) 100%),
+                url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .page-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #93C5FD;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            backdrop-filter: blur(8px);
+            margin-bottom: 1.75rem;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .page-hero p {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.85);
+            max-width: 680px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .page-hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline-white {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 2rem;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 4px;
+            border: 2px solid rgba(255,255,255,0.6);
+            color: white;
+            background: transparent;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: white;
+        }
+
+        /* â”€â”€ STAT STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .stat-strip {
+            background: var(--color-dark-bg);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .stat-strip-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stat-strip-item {
+            padding: 2.25rem 1.5rem;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .stat-strip-item:last-child { border-right: none; }
+
+        .stat-strip-num {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--color-white);
+            line-height: 1;
+            display: block;
+        }
+
+        .stat-strip-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.4rem;
+            display: block;
+        }
+
+        /* â”€â”€ PRODUCTS SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .products-section {
+            padding: 6rem 0;
+            background: var(--color-light);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3.5rem;
+        }
+
+        .product-block {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+        }
+
+        .product-block:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(14, 108, 196, 0.12);
+            border-color: rgba(14, 108, 196, 0.3);
+        }
+
+        .product-block-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-block-body {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-block-tag {
+            display: inline-block;
+            background: var(--color-accent-light);
+            color: var(--color-primary);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            margin-bottom: 0.85rem;
+        }
+
+        .product-block-body h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .product-block-body p {
+            font-size: 0.97rem;
+            line-height: 1.7;
+            color: var(--color-body);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .product-block-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .spec-chip {
+            background: var(--color-light);
+            border: 1px solid var(--color-border);
+            color: var(--color-dark);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+        }
+
+        .product-block-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+            color: white;
+            font-size: 0.88rem;
+            font-weight: 700;
+            align-self: flex-start;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 14px rgba(14, 108, 196, 0.25);
+        }
+
+        .product-block-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(14, 108, 196, 0.35);
+            color: white;
+        }
+
+        /* â”€â”€ CAPABILITIES SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .capabilities-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3.5rem;
+        }
+
+        .capability-card {
+            padding: 2.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            background: var(--color-light);
+            transition: var(--transition-smooth);
+        }
+
+        .capability-card:hover {
+            border-color: var(--color-primary);
+            background: white;
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .capability-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 10px;
+            background: rgba(14, 108, 196, 0.08);
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .capability-icon .material-icons { font-size: 1.75rem; }
+
+        .capability-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .capability-card p {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--color-body);
+            margin: 0;
+        }
+
+        /* â”€â”€ STANDARDS STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .standards-section {
+            padding: 4rem 0;
+            background: var(--color-dark-bg);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .standards-label {
+            text-align: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #64748B;
+            margin-bottom: 2rem;
+        }
+
+        .standards-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .standard-badge {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #CBD5E1;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+        }
+
+        /* â”€â”€ CTA SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .page-cta {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-gradient-start) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-cta::before {
+            content: '';
+            position: absolute;
+            top: -80px; right: -80px;
+            width: 320px; height: 320px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            pointer-events: none;
+        }
+
+        .page-cta h2 {
+            color: white;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            margin-bottom: 1rem;
+        }
+
+        .page-cta h2::after { display: none; }
+
+        .page-cta p {
+            color: rgba(255,255,255,0.82);
+            font-size: 1.1rem;
+            max-width: 560px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        @media (max-width: 1024px) {
+            .capabilities-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero { padding: 7rem 0 4rem; }
+            .stat-strip-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-strip-item:nth-child(2) { border-right: none; }
+            .stat-strip-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.06); }
+            .products-grid { grid-template-columns: 1fr; }
+            .capabilities-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- â”€â”€ HEADER (same as index.html) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-container">
+                <img src="logo-png.png" alt="ALBLOSHI" class="nav-logo">
+            </a>
+            <nav class="nav-menu-wrapper">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html#segments" class="nav-link nav-link-dropdown">Business Divisions</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="industrial-services.html">Industrial Materials</a></li>
+                            <li><a href="food-services.html">Food Distribution</a></li>
+                            <li><a href="intelligent-chemicals.html">Intelligent Chemicals</a></li>
+                            <li><a href="index.html#contact">Manpower Supply</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#partner" class="nav-link nav-link-dropdown">Partnerships</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#partner">TELLABS Specialty Chemicals</a></li>
+                            <li><a href="index.html#partner">International Sourcing Brands</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#about" class="nav-link nav-link-dropdown">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#about">Company Overview</a></li>
+                            <li><a href="index.html#about">Vision and Mission</a></li>
+                            <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
+                            <li><a href="index.html#network">Market Reach</a></li>
+                            <li><a href="index.html#faq">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-cta">
+                        <a href="index.html#contact" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.94rem;">Request a Quote</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- â”€â”€ PAGE HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-hero-badge">
+                <span class="material-icons" style="font-size:1rem;">precision_manufacturing</span>
+                Division I â€” Industrial Materials
+            </span>
+            <h1>Industrial Materials &amp;<br>Building Solutions</h1>
+            <p>Complete piping systems, flow control hardware, electrical infrastructure, and certified safety consumables â€” sourced to ASTM/ASME standards and delivered across the Kingdom.</p>
+            <div class="page-hero-actions">
+                <a href="index.html#contact" class="btn btn-primary">Request a Quote</a>
+                <a href="#products" class="btn-outline-white">View Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ STAT STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <div class="stat-strip">
+        <div class="container">
+            <div class="stat-strip-grid">
+                <div class="stat-strip-item">
+                    <span class="stat-strip-num">500+</span>
+                    <span class="stat-strip-label">Product SKUs</span>
+                </div>
+                <div class="stat-strip-item">
+                    <span class="stat-strip-num">36â€³</span>
+                    <span class="stat-strip-label">Max Pipe Size</span>
+                </div>
+                <div class="stat-strip-item">
+                    <span class="stat-strip-num">ASTM</span>
+                    <span class="stat-strip-label">Certified Supply</span>
+                </div>
+                <div class="stat-strip-item">
+                    <span class="stat-strip-num">48h</span>
+                    <span class="stat-strip-label">Dispatch Lead Time</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- â”€â”€ PRODUCTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title center">Our Product Range</h2>
+                <p class="large-para" style="max-width: 700px; margin: 0 auto;">Precision-sourced materials for oil &amp; gas, heavy construction, and manufacturing â€” every item backed by full mill documentation.</p>
+            </div>
+
+            <div class="products-grid">
+
+                <!-- Product 1 -->
+                <div class="product-block">
+                    <img src="https://images.unsplash.com/photo-1585713181935-d5f622cc2415?auto=format&fit=crop&w=800&q=80" alt="CS and SS Seamless Pipes" class="product-block-img">
+                    <div class="product-block-body">
+                        <span class="product-block-tag">Piping Systems</span>
+                        <h3>CS and SS Seamless Pipes</h3>
+                        <p>Seamless and ERW pipes in Carbon Steel and Stainless Steel conforming to ASTM/ASME standards. Available in schedule 40, 80, and 160 wall thicknesses, sized up to 36 inches for both upstream and downstream applications.</p>
+                        <div class="product-block-specs">
+                            <span class="spec-chip">ASTM A106</span>
+                            <span class="spec-chip">ASTM A312</span>
+                            <span class="spec-chip">API 5L</span>
+                            <span class="spec-chip">Up to 36â€³</span>
+                        </div>
+                        <a href="index.html#contact" class="product-block-btn">
+                            <span class="material-icons" style="font-size:1rem;">mail_outline</span>
+                            Get Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-block">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Valves and Flanges" class="product-block-img">
+                    <div class="product-block-body">
+                        <span class="product-block-tag">Flow Control</span>
+                        <h3>Valves and Flanges</h3>
+                        <p>Gate, globe, ball, butterfly, and check valves alongside Weld Neck, Slip-on, Blind, and Lap Joint flanges in premium ASME pressure class ratings 150 through 2500 for critical process environments.</p>
+                        <div class="product-block-specs">
+                            <span class="spec-chip">ASME B16.5</span>
+                            <span class="spec-chip">API 600</span>
+                            <span class="spec-chip">Class 150â€“2500</span>
+                            <span class="spec-chip">CS / SS / Alloy</span>
+                        </div>
+                        <a href="index.html#contact" class="product-block-btn">
+                            <span class="material-icons" style="font-size:1rem;">mail_outline</span>
+                            Get Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-block">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Cable Trays and Fittings" class="product-block-img">
+                    <div class="product-block-body">
+                        <span class="product-block-tag">Electrical Infrastructure</span>
+                        <h3>Cable Trays and Fittings</h3>
+                        <p>Heavy-duty perforated, ladder-type, and wire mesh cable trays with hot-dip galvanized coating rated for extreme GCC climatic conditions. Full range of fittings including bends, tees, reducers, and supports.</p>
+                        <div class="product-block-specs">
+                            <span class="spec-chip">IEC 61537</span>
+                            <span class="spec-chip">Hot-Dip Galvanized</span>
+                            <span class="spec-chip">SS 304 / 316</span>
+                            <span class="spec-chip">100â€“900mm Width</span>
+                        </div>
+                        <a href="index.html#contact" class="product-block-btn">
+                            <span class="material-icons" style="font-size:1rem;">mail_outline</span>
+                            Get Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-block">
+                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80" alt="Welding and Safety Gear" class="product-block-img">
+                    <div class="product-block-body">
+                        <span class="product-block-tag">Safety &amp; Consumables</span>
+                        <h3>Welding and Safety Gear</h3>
+                        <p>High-integrity welding electrodes, TIG and MIG wire fillers, standard and specialist PPE, protective suits, certified hard hats, arc flash helmets, and compliant fallback safety systems for industrial worksites.</p>
+                        <div class="product-block-specs">
+                            <span class="spec-chip">AWS Certified</span>
+                            <span class="spec-chip">EN 397 Helmets</span>
+                            <span class="spec-chip">SASO Compliant</span>
+                            <span class="spec-chip">ARAMCO Approved</span>
+                        </div>
+                        <a href="index.html#contact" class="product-block-btn">
+                            <span class="material-icons" style="font-size:1rem;">mail_outline</span>
+                            Get Quote
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ CAPABILITIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="capabilities-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title center">Why Source From Albloshi</h2>
+                <p class="large-para" style="max-width: 650px; margin: 0 auto;">Our industrial supply chain is built on verified sourcing, certified documentation, and rapid delivery to the Kingdom's most demanding project sites.</p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <span class="material-icons">verified</span>
+                    </div>
+                    <h3>Mill Test Certificates</h3>
+                    <p>Every pipe, valve, and fitting ships with original Mill Test Certificates (MTC) traceable to the production heat, conforming to ASTM, ASME, and API specifications.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <span class="material-icons">inventory_2</span>
+                    </div>
+                    <h3>Warehoused Stock</h3>
+                    <p>Large buffer inventory maintained at our Dammam warehouse to guarantee immediate availability for urgent project requirements and shutdown maintenance.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <span class="material-icons">local_shipping</span>
+                    </div>
+                    <h3>48-Hour Dispatch</h3>
+                    <p>Dedicated logistics fleet enables same or next-day dispatch across the Eastern Province, with scheduled freight to Riyadh and Jeddah twice weekly.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <span class="material-icons">engineering</span>
+                    </div>
+                    <h3>Technical Sales Support</h3>
+                    <p>Our sales engineers assist in material selection, specification review, and material substitution to keep your project on schedule and within budget.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <span class="material-icons">gavel</span>
+                    </div>
+                    <h3>Aramco &amp; SASO Compliant</h3>
+                    <p>Products sourced and documented to meet Saudi Aramco SAES standards and SASO regulations, simplifying vendor qualification and inspection processes.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <span class="material-icons">handshake</span>
+                    </div>
+                    <h3>Credit Account Terms</h3>
+                    <p>Approved contractors and procurement companies can apply for direct credit accounts with flexible net payment terms through our business development team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ STANDARDS STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="standards-section">
+        <div class="container">
+            <p class="standards-label">Compliance &amp; Standards We Supply To</p>
+            <div class="standards-grid">
+                <span class="standard-badge">ASTM A106</span>
+                <span class="standard-badge">ASTM A312</span>
+                <span class="standard-badge">API 5L / API 600</span>
+                <span class="standard-badge">ASME B16.5</span>
+                <span class="standard-badge">ASME B16.9</span>
+                <span class="standard-badge">IEC 61537</span>
+                <span class="standard-badge">SASO</span>
+                <span class="standard-badge">Saudi Aramco SAES</span>
+                <span class="standard-badge">AWS D1.1</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <section class="page-cta">
+        <div class="container" style="position:relative;z-index:1;">
+            <h2 class="section-title center" style="color:white;">Ready to Source Industrial Materials?</h2>
+            <p>Submit your bill of materials or project specifications and our team will respond within one business day with pricing and availability.</p>
+            <a href="index.html#contact" class="btn btn-primary" style="background:white; color:var(--color-primary); box-shadow:0 4px 20px rgba(0,0,0,0.2);">Send Your Requirements</a>
+        </div>
+    </section>
+
+    <!-- â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <footer class="bg-dark-section" style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-brand">
+                        <a href="index.html" class="logo-container">
+                            <img src="logo-png.png" alt="ALBLOSHI" class="footer-logo" style="filter: brightness(0) invert(1);">
+                        </a>
+                        <p>A premium multi-industry Saudi enterprise operating dynamic supply operations across industrial materials, food commodities, specialty chemicals, and professional manpower supply.</p>
+                        <span style="font-size: 0.8rem; color: #64748B;">CR Number: 7049763092</span>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Business Segments</h4>
+                        <ul class="footer-links">
+                            <li><a href="industrial-services.html">Industrial Materials</a></li>
+                            <li><a href="index.html#partner">TELLABS Chemicals</a></li>
+                            <li><a href="food-services.html">Food Distribution</a></li>
+                            <li><a href="index.html#contact">Manpower Supply</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Industrial Products</h4>
+                        <ul class="footer-links">
+                            <li><a href="#products">Seamless Pipes</a></li>
+                            <li><a href="#products">Valves and Flanges</a></li>
+                            <li><a href="#products">Cable Trays</a></li>
+                            <li><a href="#products">Welding Consumables</a></li>
+                            <li><a href="#products">Safety Gear</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Corporate Offices</h4>
+                        <div class="footer-contact-item">
+                            <p class="footer-contact-text">+966 54 958 1547</p>
+                        </div>
+                        <div class="footer-contact-item">
+                            <p class="footer-contact-text"><a href="mailto:sales@albloshi.co">sales@albloshi.co</a></p>
+                        </div>
+                        <div class="footer-contact-item">
+                            <p class="footer-contact-text">5250, Al Nidal 7372, Ash Shulah Dist., Dammam 34261, KSA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Mohammad Abdulla Albloshi Trading Co. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
